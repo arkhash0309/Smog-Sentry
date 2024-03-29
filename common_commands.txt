@@ -1,0 +1,46 @@
+df.to_csv("combined_data.csv", index=False)
+
+
+
+df.loc[df['Location'] == "Colombo Proper", "Location"] = "Colombo"
+df.loc[df['Location'] == "Deniyaya, Matara", "Location"] = "Matara"
+df.loc[df['Location'] == "Nuwara Eliya Proper", "Location"] = "Nuwara Eliya"
+df.loc[df['Location'] == "Bibile, Monaragala", "Location"] = "Monaragala"
+df.loc[df['Location'] == "Kurunegala Proper", "Location"] = "Kurunegala"
+df.loc[df['Location'] == "Jaffna Proper", "Location"] = "Jaffna"
+df.loc[df['Location'] == "Kandy Proper", "Location"] = "Kandy"
+df
+
+df["Current_Date"] = pd.to_datetime(df["Current_Date"])
+df["Next_Date"]  = pd.to_datetime(df["Next_Date"])
+df.dtypes
+
+
+# let us store the years in an array
+years = [2019,2020,2021,2022,2023]
+# lets us store all the locations also in an array
+locations = ["Colombo","Matara","Nuwara Eliya","Monaragala","Kurunegala","Jaffna","Kandy"]
+
+for location in locations:
+    print("\n")
+    print(location)
+    print("\n")
+    print(df.loc[df["Location"] == location, "HCHO_Reading"].describe())
+    print("\n")
+
+
+
+plt.figure(figsize=(10,6))
+sns.barplot(data=df, x="Location", y="HCHO_Reading", color="hotpink")
+plt.show()
+
+
+plt.figure(figsize=(10,6))
+sns.histplot(data=df, x="HCHO_Reading", bins=300, color="hotpink")
+plt.show()
+
+
+
+plt.figure(figsize=(10,6))
+sns.scatterplot(data=df, x="Current_Date", y="HCHO_Reading", hue="Location", color="hotpink")
+plt.show()
