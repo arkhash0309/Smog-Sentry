@@ -1,0 +1,5 @@
+Bar plot of mean HCHO- cities with more industrial and population and activity have higher readings.
+Scatter plot- Colombo has a higher spread compared to other locations.
+
+
+2020 to 2022 hcho reading is lower; possibly due to covid.
