@@ -3,3 +3,13 @@ Scatter plot- Colombo has a higher spread compared to other locations.
 
 
 2020 to 2022 hcho reading is lower; possibly due to covid.
+
+
+Fill in the values for covid years in preprocessing.
+
+
+
+
+
+References
+http://www.statistics.gov.lk/Publication/Economic-Statistics-2023
